@@ -13,7 +13,7 @@ T_min, T_max = 278, 298
 H_min, H_max = 42, H_0-H_plusinf
 Enz_min, Enz_max = 61, 80
 s = 5
-r = s*(s-1)/2
+r = int(s*(s-1)/2)
 
 
 A = np.array([[-4.21270271e-04+1], [-2.36178784e-04+1], [-3.22164500e-04+1], [-2.52650737e-04+1], [-5.55708636e-04+1]])
@@ -56,7 +56,8 @@ def get_gmax(s,A,B,C,D):
         pwa(H_min,Enz_max,T_min,A[i],B[i],C[i],D[i]), pwa(H_min,Enz_max,T_max,A[i],B[i],C[i],D[i]),
         pwa(H_max,Enz_min,T_min,A[i],B[i],C[i],D[i]), pwa(H_max,Enz_min,T_max,A[i],B[i],C[i],D[i]),
         pwa(H_max,Enz_max,T_min,A[i],B[i],C[i],D[i]), pwa(H_max,Enz_max,T_max,A[i],B[i],C[i],D[i])]
-        gmax[i] = min(choice)
+        gmax[i] = max(choice)
+        # print(choice)
     return gmax
 
 
