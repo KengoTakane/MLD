@@ -49,7 +49,7 @@ T = T.flatten()
 R = R.flatten()
 """
 
-
+print('A_H type:', type(A_H))
 
 
 def pwa(H, Enz, Ta, A, B, C, D):
